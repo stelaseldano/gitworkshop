@@ -253,7 +253,7 @@ $ git commit -am"e.g. new cat TOM.md created"
 
 TOM.md
 
-* Line 3 add "(Cat barking) Woof. Woof"
+* Line 3 add "(Tom barking) Woof. Woof"
 
 ```
 $ git checkout TOM.md
@@ -372,7 +372,7 @@ $ git push
 6. B1 pushes
 7. B1 pulls
 7. B1 resolves the conflict manually
-7. B1 edits the file by putting his line on line 7 and adding B2's line on line 8 and delete the message
+7. B1 edits the file by putting his line on line 7 and adding B2's line on line 9 and deletes the message
 8. B1 does the following:
 
 ```
@@ -381,12 +381,13 @@ $ git commit
 $ git push
 ```
 
-9. B2 adds "Both: Conflict resolving time!" on line 8
+9. B2 adds "Both: Conflict resolving time!" on line 9
 10. B2 commits
 11. B2 pulls, resloves the conflict, adds the file, commits and pushes
 12. B1 pulls
 
-There should be no conflict even though you edited the same line. Both should have something like that
+
+B1, B2 and git should all have the following:
 
 ```
 # bananas in pyjamas
@@ -396,7 +397,9 @@ B2: "Are you thinking what I'm thinking, B1?"
 B1: "I think I am, B2."
 
 B1: "It's merge conflict time!"
+
 B2: "It's merge conflict time!"
+
 Both: "Conflict resolving time!"
 ```
 
@@ -404,9 +407,7 @@ Both: "Conflict resolving time!"
 
 ## Part Three: Branching
 
-### step 1
-
-Branching: Local branches
+### step 1: Local branches
 
 1. Both do the following:
 
