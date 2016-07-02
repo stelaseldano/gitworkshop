@@ -35,236 +35,238 @@
 
 ## Part One: The basics
 
-* 	Step 1:
-	Installation
+###	step 1: installation
 
-	* Windows
+* Windows https://git-scm.com/download/win
+* Linux https://git-scm.com/download/linux
+* Mac http://git-scm.com/download/mac
 
-	https://git-scm.com/download/win
 
-	* Linux
+### step 2: setup
 
-	https://git-scm.com/download/linux
+Do the following:
 
-	* Mac
+```
+$ git config --global user.name "Yout Username Here"
+$ git config --global user.email your_email@email.com
+$ git config --global core.editor preferred_editor
+```
 
-	http://git-scm.com/download/mac
 
-*	Step 2:
-	Setup
+### step 3: create a git-tracked repo
 
-	Do the following:
+```
+$ mkdir cats-project
+$ cd cats-project
+```
 
-	$ git config --global user.name "Yout Username Here"
-	$ git config --global user.email your_email@email.com
-	$ git config --global core.editor preferred_editor
+Initialise a repo
 
+```
+$ git init
+$ ls .git
+branches/  config  description  HEAD  hooks/  info/  objects/  refs/
+$ touch README.md
+$ echo "# Cats project" >> README.md
+```
 
+or
 
-* 	Step 3:
-	Create a git-tracked repo
+Open README.md
 
-	terminal/cmd
+On line 1 write "# A project about cats" on line 1.
 
-	$ mkdir cats-project
-	$ cd cats-project
 
+Check what's going on
 
-	**Initialise a repo**
-	```
-	$ git init
-	$ ls .git
-	```
+```
+$ git status
+...
+Untracked files:
+README.md
+```
 
-	... 
-	branches/  config  description  HEAD  hooks/  info/  objects/  refs/
-	...
 
-	```
-	$ touch README.md
-	$ echo "# Cats project" >> README.md
-	```
+### step 4: GitHub
 
-	or
+* go to https://github.com
+* register
+* remember your password, you will need it
+* create a new repository
 
-	Open README.md
-	On line 1 write "# A project about cats" on line 1.
 
-	**Check what's going on**
-	```
-	$ git status
-	...
-	Untracked files:
-	README.md
-	```
+### step 5: the connection
 
+Tell git to track README.md
 
-* 	Step 4:
-	GitHub
+```
+$ git add README.md 
+$ git status
+...
+new file: README.md
+...
+```
 
-	* go to https://github.com
-	* register
-	* remember your password, you will need it
-	* create a new repository
+Tell git to take a snapshop of a tracked file
 
+```
+$ git commit -m "e.g. First line of code done."
+```
 
-*	Step 5:
-	The connection
+Check of everything is Okay
 
-	**Tell git to track README.md.**
+```
+$ git status
+...
+On branch master
+nothing to commit, working directory clean
+...
+```
 
-	```
-	$ git add README.md 
-	$ git status
-	```
+Connect the repos
 
-	```
-	...
-	new file: README.md
-	...
-	```
+```
+$ git remote add origin https://github.com/your_username/cats-project.git
+```
 
-	**Tell git to take a snapshop of a tracked file**
-	```
-	$ git commit -m "e.g. First line of code done."
-	```
+Push to the repo in GitHub
 
-	**Check of everything is Okay**
-	`$ git status`
+```
+$ git push -u origin master
+```
 
-	```
-	...
-	On branch master
-	nothing to commit, working directory clean
-	...
-	```
+Go to your GitHub profile and feel content
 
-	**Connect the repos**
-	`$ git remote add origin https://github.com/your_username/cats-project.git`
 
-	**Push to the repo in GitHub**
-	`$ git push -u origin master`
+### step 6: changes to files
 
-	**Go to your GitHub profile and feel content**
+README.md
 
+on line 3 add "e.g. This is a project about cartoon cats"
 
-* 	Step 6:
-	Changes to files
 
-	README.md
-	on line 3 add "e.g. This is a project about cartoon cats"
+```
+$ git status
+...
+modified:   README.md
+...
 
-	`$ git status`
+$ git commit -am"e.g. Description added"
+$ git push
+```
 
-	```
-	...
-	modified:   README.md
-	...
-	```
-	```
-	$ git commit -am"e.g. Description added"
+go to GitHub and see the change in the README.md
 
-	$ git push
-	```
 
-	go to GitHub and see the change in the README.md
+### step 7: adding a new file
 
+```
+$ touch GARFIELD.md
+```
 
-*	Step 7:
-	Adding a new file
+README.md
 
-	`$ touch GARFIELD.md`
+On line 5 add more info e.g. "Cat number 1 is called Garfield"
 
-	README.md
-	On line 5 add more info e.g. "Cat number 1 is called Garfield"
+GARFIELD.md
 
-	GARFIELD.md
-	On line 1 add "# Garfield"
-	On line 3 add "Description: sleepy and lazy"
+On line 1 add "# Garfield"
 
-	`$ git status`
+On line 3 add "Description: sleepy and lazy"
 
-	```
-	...
-	modified: README.md
 
-	Untracked files:
-	GARFIELD.md
-	...
-	```
+```
+$ git status
+...
+modified: README.md
 
-	```
-	$ git commit -am "e.g. Garfield"
-	$ git push
-	$ git status
-	```
+Untracked files:
+GARFIELD.md
+...
 
-	```
-	...
-	Untracked files:
-	GARFIELD.md
-	...
-	```
+$ git commit -am "e.g. Garfield"
+$ git push
+$ git status
+...
+Untracked files:
+GARFIELD.md
+...
 
-	`$ git add GARFIELD.md `
-	or
-	`$ git add --all`
-	
-	`$ git commit -am "e.g. Garfield file created"`
+$ git add GARFIELD.md  # or git add --all
+$ git commit -am "e.g. Garfield file created"
+```
 
-	Now push the new file to the repo and see the new file in GitHub
+Now push the new file to the repo and see the new file in GitHub
 
 
-*	Step 8:
-	Ignoring files
+### step 8: ignoring files
 
-	$ touch NOTES.md
-	$ git status
+```
+$ touch NOTES.md
+$ git status
+```
 
-	NOTES.md
-	On line 1 write e.g. "Notes about cats others don't need to be bothered with"
+NOTES.md
 
-	$ touch .gitignore
-	
-	.gitignore
-	On line 1 write NOTES.md
+On line 1 write e.g. "Notes about cats others don't need to be bothered with"
 
-	$ git status
-	
-	Add the newly created file to the staging area and commit. Don't push yet.
 
-	$ git cherry -v
+```
+$ touch .gitignore
+```
 
-	Now push
+.gitignore
 
+On line 1 write NOTES.md
 
-*	Step 9:
-	There is always going back
+```
+$ git status
+```
 
-	$ touch SPIKE.md TOM.md
+Add the newly created file to the staging area and commit. Don't push yet.
 
-	TOM.md
-	Line 1: "I am going to join the cat project"
-	
-	SPIKE.md
-	Line 1: "They will not like my presence in the cat project. Woof"
+```
+$ git cherry -v
+```
 
-	$ git add --all
-	$ git status
-	$ git reset HEAD SPIKE.md
+Now push
 
-	$ git commit -am"e.g. new cat TOM.md created"
 
-	TOM.md
-	Line 3 add "(Cat barking) Woof. Woof"
+### step 9: there is always going back
 
-	$ git checkout TOM.md
+```
+$ touch SPIKE.md TOM.md
+```
 
-	commit, push and see if TOM.md is in the repo
+TOM.md
 
-	Short break and then we will talk about working together on a single project.
+Line 1: "I am going to join the cat project"
 
-	Split in groups of two and sit next to each other
+SPIKE.md
+
+Line 1: "They will not like my presence in the cat project. Woof"
+
+```
+$ git add --all
+$ git status
+$ git reset HEAD SPIKE.md
+
+$ git commit -am"e.g. new cat TOM.md created"
+```
+
+TOM.md
+
+Line 3 add "(Cat barking) Woof. Woof"
+
+```
+$ git checkout TOM.md
+```
+
+commit, push and see if TOM.md is in the repo
+
+Short break and then we will talk about working together on a single project.
+
+Split in groups of two and sit next to each other
 
 
 
