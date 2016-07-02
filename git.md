@@ -274,8 +274,9 @@ Split in groups of two and sit next to each other
 
 Decide who is going to be B1 and who is going to be B2. Peeking at each others' terminals everytime something new happens
 
-1. B1 goes to https://github.com and creates a new repository called bananas.
-2. B1 makes a new directory (could be called anything, but let's stick to bananas for consistency) and does the following:
+B1 goes to https://github.com and creates a new repository called bananas.
+
+B1 makes a new directory (could be called anything, but let's stick to bananas for consistency) and does the following:
 
 ```
 $ git init
@@ -287,19 +288,25 @@ $ git remote add origin git@github..
 $ git push -u origin master
 ```
 
-3. B1 invites B2 to the repo (settings - collaborators)
-4. B2 accepts the invitation from GitHub
-5. B2 does the following:
+B1 invites B2 to the repo (settings - collaborators)
 
-	$ git clone https://github.com...
+B2 accepts the invitation from GitHub
 
-	'B2 edits the README.md
-	On line 3: "Are you thinking what I'm thinking, B1?"
+B2 does the following:
 
-	$ git commit -am "e.g. A questions added"
-	$ git push
+```
+$ git clone https://github.com...
+```
 
-6. B1 does:
+B2 edits the README.md
+On line 3: "Are you thinking what I'm thinking, B1?"
+
+```
+$ git commit -am "e.g. A questions added"
+$ git push
+```
+
+B1 does:
 
 ```
 $ git pull
@@ -308,7 +315,7 @@ $ git pull
 
 ### step 2: the answer
 
-1. B1 answers
+B1 answers
 
 B1 edits the README.md
 On line 5: "I think, I am, B2"
@@ -318,7 +325,7 @@ $ git commit -am "e.g. Question answered"
 $ git push
 ```
 
-2. B2 does:
+B2 does:
 
 ```
 $ git pull
@@ -327,22 +334,25 @@ $ git pull
 
 ### step 3: push rejected
 
-1. Open the README.md in your favourite editor.
-2. B2 adds "B2: " in the beginning of their line and puts the text in quotation marks. (line 3)
-3. B1 adds "B1: " in the beginning of their line and puts the text in quotation marks. (line 5)
-4. both does
+Open the README.md in your favourite editor.
+
+B2 adds "B2: " in the beginning of their line and puts the text in quotation marks. (line 3)
+
+B1 adds "B1: " in the beginning of their line and puts the text in quotation marks. (line 5)
+
+Both do:
 
 ```
 $ git commit -am "e.g. Quotes added"
 ```
 	
-5. B1 does:
+B1 does:
 
 ```
 $ git push
 ```
 
-6. B2 does:
+B2 does:
 
 ```
 $ git push
@@ -352,28 +362,37 @@ error: failed to push some refs to 'https://github.com/...git'
 ...
 ```
 
-7. B2 does:
+B2 does:
 
 ```
 $ git pull
 $ git push
 ```
 
-8. B1 pulls
+B1 pulls
 
 
 ### step 4: merge conflict
 
-1. On line 7, both add "It's conflict time!"
-2. B1 adds "B1: " in the beginning of line 7.
-3. B2 adds "B2: " in the beginning of line 7.
-4. Both commit
-5. B2 pushes
-6. B1 pushes
-7. B1 pulls
-7. B1 resolves the conflict manually
-7. B1 edits the file by putting his line on line 7 and adding B2's line on line 9 and deletes the message
-8. B1 does the following:
+On line 7, both add "It's conflict time!"
+
+B1 adds "B1: " in the beginning of line 7.
+
+B2 adds "B2: " in the beginning of line 7.
+
+Both commit
+
+B2 pushes
+
+B1 pushes
+
+B1 pulls
+
+B1 resolves the conflict manually
+
+B1 edits the file by putting his line on line 7 and adding B2's line on line 9 and deletes the message
+
+B1 does the following:
 
 ```
 $ git add README.md
@@ -381,10 +400,13 @@ $ git commit
 $ git push
 ```
 
-9. B2 adds "Both: Conflict resolving time!" on line 9
-10. B2 commits
-11. B2 pulls, resloves the conflict, adds the file, commits and pushes
-12. B1 pulls
+B2 adds "Both: Conflict resolving time!" on line 9
+
+B2 commits
+
+B2 pulls, resloves the conflict, adds the file, commits and pushes
+
+B1 pulls
 
 
 B1, B2 and git should all have the following:
@@ -409,7 +431,7 @@ Both: "Conflict resolving time!"
 
 ### step 1: Local branches
 
-1. Both do the following:
+Both do the following:
 
 ```
 $ git branch lulu
@@ -422,7 +444,7 @@ or:
 $ git checkout -b lulu
 ```
 
-2. touch LULU.md
+touch LULU.md
 
 ```
 # Bn meets Lulu
@@ -436,9 +458,11 @@ $ git commit -am"e.g. met Lulu"
 $ git checkout master
 ```
 
-3. There is no LULU.md on this branch
-4. Switch to the lulu branch (git checkout lulu)
-5. Add more line to your dialogue with Lulu
+There is no LULU.md on this branch
+
+Switch to the lulu branch (git checkout lulu)
+
+Add more line to your dialogue with Lulu
 
 e.g.
 
@@ -449,7 +473,7 @@ Bn: "This is my private branch he still doesn't know about."
 Lulu: "Ah, I see"
 ```
 
-6. Do the following:
+Do the following:
 
 ```
 $ git commit -am "e.g. Talked to Lulu"
@@ -467,8 +491,9 @@ Lulu: "Hi Morgan, very well, where are the Bananas?"
 Morgan: "They are doing branching and merging"
 ```
 
-8. commit and switch to branch lulu
-9. do the following
+commit and switch to branch lulu
+
+do the following
 
 ```
 $ git merge morgan
@@ -489,10 +514,13 @@ Go on branch master
 
 Both:
 
-1. create a branch with your name (e.g. b2)
-2. create a .md file and write your message to the other banana
-3. add and commit
-4. do the following
+create a branch with your name (e.g. b2)
+
+create a .md file and write your message to the other banana
+
+add and commit
+
+do the following
 
 ```
 $ git push origin <branch name>
