@@ -1,36 +1,36 @@
-# Git
-
-VCS -version control system
-
-** Git is a VCS.
-- free
-- open source
-- published under GPL lisence
-- created by Linus Torvald in 2005 ?with the intention of further and more efficient development of linux kernel
-- the most widely used VCS today.
-- tracks changes in the content of the files and stores content differences from the previous copies
+# git
 
 
-** What is a VCS?
+## Part Zero: Intro
 
-- a type of softoware tools that keep track of changes and modification to the source code managed by a single programmer or a team.
-- it is used in software devlopment
+### what is a vcs?
 
-
-** Why is git useful?
-
-- source code is backed up
-- git tracks every change in every file made by every programamer from the creation of the repository.
-- changes include creation and deletions of files as well.
-- earlier versions of the code are saved and can be accessed.
-- each developer can make changes to many parts of the code.
-- branching and merging
+* version control system
+* software tools that keep track of changes to the source code managed by a single programmer or a team
 
 
-** Branching
-- think of them as a way to request a brand new working directory, staging area, and project history
-- it possible to work on many unrelated features at the same time
-- switching between branches can be done offline
+### git is a vcs
+
+* free and open source, GPL
+* created by Linus Torvalds in 2005 for more efficient development of the Linux kernel
+* the most widely used vcs today
+* tracks changes in files and stores the differences
+* changes include file creation and deletion as well
+
+
+### why is git useful?
+
+* earlier version of the code are accessible
+* each developer can make changes to each file without locking
+* branching
+
+
+### branching
+
+* think of them as a way to request a brand new working directory, staging area, and project history
+* it possible to work on many unrelated features at the same time
+* switching between branches can be done offline
+
 
 
 ## Part One: The basics
@@ -260,7 +260,7 @@ VCS -version control system
 
 
 
-Part Two: Working on a project with git and other human beings.
+## Part Two: Working on a project with git and other human beings.
 
 
 *	Step 1:
@@ -383,7 +383,9 @@ Part Two: Working on a project with git and other human beings.
 	------
 
 
-*	Step 5:
+## Part Three: Branching
+
+*	Step 1:
 	Branching: Local branches
 
 	1. Both do the following:
@@ -444,7 +446,7 @@ Part Two: Working on a project with git and other human beings.
 		$ git branch -d morgan
 
 
-*	Step 6:
+*	Step 2:
 	Branching: Remote branches
 
 	Go on branch master
@@ -468,7 +470,7 @@ Part Two: Working on a project with git and other human beings.
 
 
 
-create a <file>
+## Part Four: Cheatsheet
 
 initialise a repo
 ---
@@ -604,46 +606,5 @@ more about git
 ---
 https://git-scm.com/doc
 https://www.atlassian.com/git/tutorials/setting-up-a-repository
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
