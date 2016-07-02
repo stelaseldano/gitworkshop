@@ -39,8 +39,16 @@
 	Installation
 
 	* Windows
+
+	https://git-scm.com/download/win
+
 	* Linux
+
+	https://git-scm.com/download/linux
+
 	* Mac
+
+	http://git-scm.com/download/mac
 
 *	Step 2:
 	Setup
