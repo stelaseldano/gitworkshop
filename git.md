@@ -383,90 +383,112 @@
 	------
 
 
+
 ## Part Three: Branching
 
-*	Step 1:
-	Branching: Local branches
+### step 1
 
-	1. Both do the following:
+Branching: Local branches
 
-		$ git branch lulu
-		$ git checkout lulu
+1. Both do the following:
 
-		or 
+```
+$ git branch lulu
+$ git checkout lulu
+```
 
-		$ git checkout -b lulu
+or:
 
-	2. touch LULU.md
+```
+$ git checkout -b lulu
+```
 
-	------
-	# Bn meets Lulu
+2. touch LULU.md
 
-	Bn: "Hi, Lulu! How is it going?"
-	------
+```
+# Bn meets Lulu
 
-		$ git add LULU.md
-		$ git commit -am"e.g. met Lulu"
-		$ git checkout master
+Bn: "Hi, Lulu! How is it going?"
+```
 
-	3. There is no LULU.md on this branch
-	4. Switch to the lulu branch (git checkout lulu)
-	5. Add more line to your dialogue with Lulu
+```
+$ git add LULU.md
+$ git commit -am"e.g. met Lulu"
+$ git checkout master
+```
 
-	e.g.
-	------
-	[...]
-	Lulu: "Hi Bn, very well, where is Bn?"
-	Bn: "This is my private branch he still doesn't know about."
-	Lulu: "Ah, I see"
-	-----
+3. There is no LULU.md on this branch
+4. Switch to the lulu branch (git checkout lulu)
+5. Add more line to your dialogue with Lulu
 
-	6. Do the following:
+e.g.
 
-		$ git commit -am "e.g. Talked to Lulu"
-		$ git branch
-		$ git checkout -b morgan
+```
+[...]
+Lulu: "Hi Bn, very well, where is Bn?"
+Bn: "This is my private branch he still doesn't know about."
+Lulu: "Ah, I see"
+```
 
-	LULU.md
-	------
-	# Morgan meets Lulu
+6. Do the following:
 
-	Morgan: "Hi, Lulu! How is it going?"
-	Lulu: "Hi Morgan, very well, where are the Bananas?"
-	Morgan: "They are doing branching and merging"
-	------
+```
+$ git commit -am "e.g. Talked to Lulu"
+$ git branch
+$ git checkout -b morgan
+```
 
-	8. commit and switch to branch lulu
-	9. do the following
+LULU.md:
 
-		$ git merge morgan
+```
+# Morgan meets Lulu
 
-		Now LULU.md on branch lulu should be the same as LULU.md on branch morgan
+Morgan: "Hi, Lulu! How is it going?"
+Lulu: "Hi Morgan, very well, where are the Bananas?"
+Morgan: "They are doing branching and merging"
+```
 
-		$ git branch -d morgan
+8. commit and switch to branch lulu
+9. do the following
+
+```
+$ git merge morgan
+```
+
+Now LULU.md on branch lulu should be the same as LULU.md on branch morgan
+
+```
+$ git branch -d morgan
+```
 
 
-*	Step 2:
-	Branching: Remote branches
+### step 2
 
-	Go on branch master
+Branching: Remote branches
 
-	Both:
-	1. Create a branch with a name of your choice
-	2. Create a .md file and white something.
-	3. add and commit
-	4. do the following
+Go on branch master
 
-		$ git push origin <branch name>
-		$ git checkout master
+Both:
 
-		$ git branch <new remote>
-		$ git pull origin <new remote>
+1. create a branch with your name (e.g. b2)
+2. create a .md file and write your message to the other banana
+3. add and commit
+4. do the following
 
-		or
+```
+$ git push origin <branch name>
+$ git checkout master
 
-		$ git checkout master
-		$ git pull
+$ git branch <new remote>
+$ git pull origin <new remote>
+```
+
+or
+
+```
+$ git checkout master
+$ git pull
+```
 
 
 
