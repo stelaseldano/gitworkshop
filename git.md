@@ -473,138 +473,189 @@
 ## Part Four: Cheatsheet
 
 initialise a repo
----
+
+```
 $ git init
+```
 
 tell your repo which repo to track
----
+
+```
 $ git remote add origin
+```
 
 clone a repo
----
+
+```
 $ git clone link_to_repo
+```
 
 track a file
----
+
+```
 $ git add <file>
+```
 
 track all files in the directory
----
+
+```
 $ git add --all
+```
 
 ignore files
----
-create a .gitignore file
-white the name of the files or directories
-put each name on a new line
-add the .gitignore ($ git add .gitignore) 
+
+* create a .gitignore file
+* white the name of the files or directories
+* put each name on a new line
+* add the .gitignore ($ git add .gitignore) 
 
 take a snapshop of a single file
----
+
+```
 $ git commit -m "Message" path/to/file
+```
 
 commit every tracked file
----
+
+```
 $ git commit -am "Message"
+```
 
 push them to GitHub fo the first time
----
+
+```
 $ git push -u origin master
+```
 
 push them to GitHub
----
+
+```
 $ git push
+```
 
 if push is rejected with the message fetch first
----
+
+```
 $ git pull
 $ git push
+```
 
 get the last version (if sb did a change)
----
+
+```
 $ git pull
+```
 
 discard changes to the last commit
----
+
+```
 $ git checkout <filename>
+```
 
 move a file back to the unstaged area
----
+
+```
 $ git reset HEAD <filename>
+```
 
 resolve a merge conflict
----
-open the problematic files
-decide what to keep
-make the changes
-delete git's commets
 
+* open the problematic files
+* decide what to keep
+* make the changes
+* delete git's comments
+
+```
 $ git add <file>
 $ git commit
+```
 
 go back to a specific commit
----
+
+```
 git reset --hard <commit_string_name>
 NOTE! commits done later than the commit ypu are going back to, will be lost
+```
 
 create a branch
----
+
+```
 $ git branch <branchname>
+```
 
 move to a specific branch
----
+
+```
 $ git checkout -b <branchname>
+```
 
 create a new branch and move to it
----
+
+```
 $ git checkout -b <branchname>
+```
 
 check how many branches are there and on which one you are on
----
+
+```
 $ git branch
+```
 
 change a local branch's name
----
+
+```
 $ git branch -m <old name> <new name>
+```
 
 merge branches
----
+
 go to the branch the merge is going to be made to
 
+```
 $ git merge <branchname>
+```
 
 e.g.
+
+```
 $ git checkout design
-On branch design
 $ git merge new-colour-pallette
+```
 
 delete a merged branch
----
+
+```
 $ git branch -d <branchname>
+```
 
 delete an unmerged branch
----
-$ git branch -D <branchname>
 
+```
+$ git branch -D <branchname>
+```
 
 
 check the status
----
+
+```
 $ git status
+```
 
 check the last commits 
----
+
+```
 $ git log
+```
 
 check the unpushed commits 
----
+
+```
 $ git cherry -v
-
-
+```
 
 more about git
----
-https://git-scm.com/doc
-https://www.atlassian.com/git/tutorials/setting-up-a-repository
+
+* https://git-scm.com/doc
+* https://www.atlassian.com/git/tutorials/setting-up-a-repository
 
 
