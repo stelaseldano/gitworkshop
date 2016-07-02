@@ -70,11 +70,9 @@ $ touch README.md
 $ echo "# Cats project" >> README.md
 ```
 
-or
+or open README.md
 
-Open README.md
-
-On line 1 write "# A project about cats" on line 1.
+* On line 1 write "# A project about cats" on line 1.
 
 
 Check what's going on
@@ -142,7 +140,7 @@ Go to your GitHub profile and feel content
 
 README.md
 
-on line 3 add "e.g. This is a project about cartoon cats"
+* on line 3 add "e.g. This is a project about cartoon cats"
 
 
 ```
@@ -166,13 +164,12 @@ $ touch GARFIELD.md
 
 README.md
 
-On line 5 add more info e.g. "Cat number 1 is called Garfield"
+* On line 5 add more info e.g. "Cat number 1 is called Garfield"
 
 GARFIELD.md
 
-On line 1 add "# Garfield"
-
-On line 3 add "Description: sleepy and lazy"
+* On line 1 add "# Garfield"
+* On line 3 add "Description: sleepy and lazy"
 
 
 ```
@@ -208,7 +205,7 @@ $ git status
 
 NOTES.md
 
-On line 1 write e.g. "Notes about cats others don't need to be bothered with"
+* On line 1 write e.g. "Notes about cats others don't need to be bothered with"
 
 
 ```
@@ -217,7 +214,7 @@ $ touch .gitignore
 
 .gitignore
 
-On line 1 write NOTES.md
+* On line 1 write NOTES.md
 
 ```
 $ git status
@@ -240,11 +237,11 @@ $ touch SPIKE.md TOM.md
 
 TOM.md
 
-Line 1: "I am going to join the cat project"
+* Line 1: "I am going to join the cat project"
 
 SPIKE.md
 
-Line 1: "They will not like my presence in the cat project. Woof"
+* Line 1: "They will not like my presence in the cat project. Woof"
 
 ```
 $ git add --all
@@ -256,7 +253,7 @@ $ git commit -am"e.g. new cat TOM.md created"
 
 TOM.md
 
-Line 3 add "(Cat barking) Woof. Woof"
+* Line 3 add "(Cat barking) Woof. Woof"
 
 ```
 $ git checkout TOM.md
