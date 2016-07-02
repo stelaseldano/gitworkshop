@@ -273,124 +273,135 @@ Split in groups of two and sit next to each other
 ## Part Two: Working on a project with git and other human beings.
 
 
-*	Step 1:
-	Initialising and cloning a repo
+### step 1: initialising and cloning a repo
 
-	Decide who is going to be B1 and who is going to be B2. Peeking at each others' terminals everytime something new happens
+Decide who is going to be B1 and who is going to be B2. Peeking at each others' terminals everytime something new happens
 
-	1. B1 goes to https://github.com and creates a new repository called bananas.
-	2. B1 makes a new directory (could be called anything, but let's stick to bananas for consistency) and does the following:
+1. B1 goes to https://github.com and creates a new repository called bananas.
+2. B1 makes a new directory (could be called anything, but let's stick to bananas for consistency) and does the following:
 
-		$ git init
-		$ touch README.md
-		$ echo "# Bananas in Pyjamas" >> README.md
-		$ git add --all
-		$ git commit -am"e.g. New repo founded"
-		$ git remote add origin git@github..
-		$ git push -u origin master
+```
+$ git init
+$ touch README.md
+$ echo "# Bananas in Pyjamas" >> README.md
+$ git add --all
+$ git commit -am"e.g. New repo founded"
+$ git remote add origin git@github..
+$ git push -u origin master
+```
 
-	3. B1 invites B2 to the repo (settings - collaborators)
-	4. B2 accepts the invitation from GitHub
-	5. B2 does the following:
+3. B1 invites B2 to the repo (settings - collaborators)
+4. B2 accepts the invitation from GitHub
+5. B2 does the following:
 
-		$ git clone https://github.com...
+	$ git clone https://github.com...
 
-		'B2 edits the README.md
-		On line 3: "Are you thinking what I'm thinking, B1?"
+	'B2 edits the README.md
+	On line 3: "Are you thinking what I'm thinking, B1?"
 
-		$ git commit -am "e.g. A questions added"
-		$ git push
+	$ git commit -am "e.g. A questions added"
+	$ git push
 
-	6. B1 does:
+6. B1 does:
 
-		$ git pull
+```
+$ git pull
+```
 
-*	Step 2:
+
+### step 2: the answer
+
+1. B1 answers
+
+B1 edits the README.md
+On line 5: "I think, I am, B2"
+
+```
+$ git commit -am "e.g. Question answered"
+$ git push
+```
+
+2. B2 does:
+
+```
+$ git pull
+```
+
+
+### step 3: push rejected
+
+1. Open the README.md in your favourite editor.
+2. B2 adds "B2: " in the beginning of their line and puts the text in quotation marks. (line 3)
+3. B1 adds "B1: " in the beginning of their line and puts the text in quotation marks. (line 5)
+4. both does
+
+```
+$ git commit -am "e.g. Quotes added"
+```
 	
+5. B1 does:
 
-	1. B1 answers
+```
+$ git push
+```
 
-		B1 edits the README.md
-		On line 5: "I think, I am, B2"
-		
-		$ git commit -am "e.g. Question answered"
-		$ git push
+6. B2 does:
 
-	2. B2 does:
+```
+$ git push
+...
+! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/...git'
+...
+```
 
-		$ git pull
+7. B2 does:
 
+```
+$ git pull
+$ git push
+```
 
-*	Step 3:
-	Push rejected
-
-	1. Open the README.md in your favourite editor.
-	2. B2 adds "B2: " in the beginning of their line and puts the text in quotation marks. (line 3)
-	3. B1 adds "B1: " in the beginning of their line and puts the text in quotation marks. (line 5)
-	4. both does
-
-		$ git commit -am "e.g. Quotes added"
-		
-	5. B1 does:
-
-		$ git push
-
-	6. B2 does:
-
-		$ git push
-		...
-		 ! [rejected]        master -> master (fetch first)
-		error: failed to push some refs to 'https://github.com/...git'
-		...
-
-	7. B2 does:
-
-		$ git pull
-		$ git push
-
-	8. B1 pulls
+8. B1 pulls
 
 
-*	Step 4:
-	Merge Conflict
+### step 4: merge conflict
 
-	1. On line 7, both add "It's conflict time!"
-	2. B1 adds "B1: " in the beginning of line 7.
-	3. B2 adds "B2: " in the beginning of line 7.
-	4. Both commit
-	5. B2 pushes
-	6. B1 pushes
-	7. B1 pulls
-	...
+1. On line 7, both add "It's conflict time!"
+2. B1 adds "B1: " in the beginning of line 7.
+3. B2 adds "B2: " in the beginning of line 7.
+4. Both commit
+5. B2 pushes
+6. B1 pushes
+7. B1 pulls
+7. B1 resolves the conflict manually
+7. B1 edits the file by putting his line on line 7 and adding B2's line on line 8 and delete the message
+8. B1 does the following:
 
-	...
+```
+$ git add README.md
+$ git commit
+$ git push
+```
 
-	'B1 resolves the conflict manually
-	7. B1 edits the file by putting his line on line 7 and adding B2's line on line 8 and delete the message
-	8. B1 does the following:
+9. B2 adds "Both: Conflict resolving time!" on line 8
+10. B2 commits
+11. B2 pulls, resloves the conflict, adds the file, commits and pushes
+12. B1 pulls
 
-		$ git add README.md
-		$ git commit
-		$ git push
+There should be no conflict even though you edited the same line. Both should have something like that
 
-	9. B2 adds "Both: Conflict resolving time!" on line 8
-	10. B2 commits
-	11. B2 pulls, resloves the conflict, adds the file, commits and pushes
-	12. B1 pulls
+```
+# bananas in pyjamas
 
-	There should be no conflict even though you edited the same line. Both should have something like that
+B2: "Are you thinking what I'm thinking, B1?"
 
-	------
-	# bananas in pyjamas
+B1: "I think I am, B2."
 
-	B2: "Are you thinking what I'm thinking, B1?"
-
-	B1: "I think I am, B2."
-
-	B1: "It's merge conflict time!"
-	B2: "It's merge conflict time!"
-	Both: "Conflict resolving time!"
-	------
+B1: "It's merge conflict time!"
+B2: "It's merge conflict time!"
+Both: "Conflict resolving time!"
+```
 
 
 
